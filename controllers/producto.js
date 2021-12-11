@@ -95,7 +95,7 @@ function getProductosEmpresa(req, res) {
 
     var itemsPerPage = 6;
 
-    Empresa.findOne({ 'usuario': userId, '_id': empresaId }).exec((err, empresa) => {
+    Empresa.findOne({'_id': empresaId }).exec((err, empresa) => {
         if (err) return res.status(500).send({ message: 'Error en la peticion' });
         console.log(empresa);
 

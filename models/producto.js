@@ -1,0 +1,17 @@
+'use strict';
+
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var ProductoSchema = Schema({
+    nombre: String,
+    tipo_producto: String,
+    descripcion: String,
+    precio: String,
+    imagen: String,
+    estado: String,
+    empresa: { type: Schema.ObjectId, ref: 'Empresa' },
+    fechacreacion:String,
+});
+
+module.exports = mongoose.model('Producto', ProductoSchema);
